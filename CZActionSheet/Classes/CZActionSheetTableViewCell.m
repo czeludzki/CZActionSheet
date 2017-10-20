@@ -8,6 +8,7 @@
 
 #import "CZActionSheetTableViewCell.h"
 #import "CZActionSheetItem.h"
+#import "Masonry.h"
 
 @interface CZActionSheetTableViewCell ()
 @property (weak, nonatomic) UIButton *contentBtn;
@@ -18,7 +19,7 @@
 #pragma mark - Override
 - (void)setFrame:(CGRect)frame
 {
-    frame = kRect(frame.origin.x + 12, frame.origin.y, frame.size.width - 24, frame.size.height);
+    frame = CGRectMake(frame.origin.x + 12, frame.origin.y, frame.size.width - 24, frame.size.height);
     [super setFrame:frame];
 }
 
@@ -49,7 +50,7 @@
     
     UIButton *contentBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     contentBtn.userInteractionEnabled = NO;
-    contentBtn.backgroundColor = RMColorRGBA(255, 255, 255, .8f);
+    contentBtn.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:.7f];
     contentBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 4, 0, -4);
     contentBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -4, 0, 4);
     contentBtn.titleLabel.font = [UIFont systemFontOfSize:17];

@@ -8,6 +8,7 @@
 
 #import "CZActionSheet.h"
 #import "CZActionSheetTableViewCell.h"
+#import "Masonry.h"
 
 #define kTableViewBottomInsets 8
 
