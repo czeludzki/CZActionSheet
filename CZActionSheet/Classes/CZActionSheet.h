@@ -22,6 +22,11 @@
 - (BOOL)actionSheetShouldRemoveFromScreen;
 @end
 
+typedef NS_ENUM(NSUInteger, CZActionStyle) {
+    CZActionStyle_Light = UIBlurEffectStyleLight, // default
+    CZActionStyle_Dark = UIBlurEffectStyleDark
+};
+
 @interface CZActionSheet : UIView
 /**
  *  delegate
@@ -29,6 +34,7 @@
 @property (nonatomic ,weak) id<CZActionSheetDeleagte> delegate;
 @property (nonatomic, copy) NSString *title;
 @property (copy, nonatomic) NSString *detail;
+@property (assign, nonatomic) CZActionStyle style;
 /**
  *  显示CZActionSheet
  */

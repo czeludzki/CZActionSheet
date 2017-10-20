@@ -52,6 +52,7 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
 - (instancetype)initWithActionItems:(NSArray<CZActionSheetItem *> *)items cancelButtonTitle:(NSString *)cancelBtnTitle{
     if (self = [super init]) {
         self.items = [NSMutableArray arrayWithArray:items];
+        self.style = CZActionStyle_Light;
         if (cancelBtnTitle.length) {
             CZActionSheetItem *cancelItem = [CZActionSheetItem itemWithTitle:cancelBtnTitle image:nil andAction:nil];
             [self.items addObject:cancelItem];
@@ -65,7 +66,7 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
 {
     self.backgroundColor = [UIColor clearColor];
     
-    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:(UIBlurEffectStyle)self.style];
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
     self.effectView = effectView;
     
