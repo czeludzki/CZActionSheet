@@ -1,6 +1,12 @@
 use_frameworks!
-target 'CZActionSheet_Tests' do
+
+target 'CZActionSheet_Example' do
   pod 'CZActionSheet', :path => '../'
   pod 'Masonry'
   
+  target 'CZActionSheet_Tests' do
+    inherit! :search_paths
+
+    
+  end
 end

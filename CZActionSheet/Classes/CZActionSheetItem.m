@@ -21,7 +21,6 @@
         _image = image;
         if (!handler) handler = ^(CZActionSheetItem *actionItem, NSInteger index){};
         _handler = handler;
-        _tintColor = [UIColor darkGrayColor];
     }
     return self;
 }

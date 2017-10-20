@@ -1,0 +1,6 @@
+framework module Pods_CZActionSheet_Example {
+  umbrella header "Pods-CZActionSheet_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

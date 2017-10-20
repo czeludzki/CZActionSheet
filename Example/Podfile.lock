@@ -1,5 +1,5 @@
 PODS:
-  - CZActionSheet (0.1.0):
+  - CZActionSheet (0.1.1):
     - Masonry
   - Masonry (1.1.0)
 
@@ -12,9 +12,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CZActionSheet: a45cbcb3c144c4a2daf4c63f63dda1316ffe31ad
+  CZActionSheet: 0e735882147ac97134108d6873e32c75632ac7b3
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 2a5834860a896ce279b4438ff222515274ad0f37
+PODFILE CHECKSUM: 691d51bcee1285dc074bf08f0b016e9625fe8ef1
 
 COCOAPODS: 1.4.0.beta.1

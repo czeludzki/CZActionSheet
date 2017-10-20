@@ -42,6 +42,14 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
     self.detailLabel.text = _detail;
 }
 
+- (void)setStyle:(CZActionStyle)style
+{
+    _style = style;
+    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:(UIBlurEffectStyle)_style];
+    self.effectView.effect = effect;
+    [self.tableView reloadData];
+}
+
 #pragma mark - LifeCycle
 + (instancetype)actionSheetWithActionItems:(NSArray<CZActionSheetItem *> *)items cancelButtonTitle:(NSString *)cancelBtnTitle
 {
@@ -51,8 +59,8 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
 
 - (instancetype)initWithActionItems:(NSArray<CZActionSheetItem *> *)items cancelButtonTitle:(NSString *)cancelBtnTitle{
     if (self = [super init]) {
+        _style = CZActionStyle_Light;
         self.items = [NSMutableArray arrayWithArray:items];
-        self.style = CZActionStyle_Light;
         if (cancelBtnTitle.length) {
             CZActionSheetItem *cancelItem = [CZActionSheetItem itemWithTitle:cancelBtnTitle image:nil andAction:nil];
             [self.items addObject:cancelItem];
@@ -157,6 +165,7 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CZActionSheetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CZActionSheetTableViewCellID forIndexPath:indexPath];
+    cell.style = self.style;
     cell.actionItem = self.items[indexPath.section];
     return cell;
 }

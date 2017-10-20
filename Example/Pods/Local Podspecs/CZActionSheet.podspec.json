@@ -1,8 +1,8 @@
 {
   "name": "CZActionSheet",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A ActionSheet.",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "Just an actionSheet",
   "homepage": "https://github.com/czeludzki/CZActionSheet",
   "license": {
     "type": "MIT",
@@ -11,15 +11,16 @@
   "authors": {
     "czeludzki": "czeludzki@gmail.com"
   },
-  "source": {
-    "git": "https://github.com/czeludzki/CZActionSheet.git",
-    "tag": "0.1.0"
-  },
   "platforms": {
     "ios": "8.0"
   },
+  "source": {
+    "git": "https://github.com/czeludzki/CZActionSheet.git",
+    "tag": "0.1.1"
+  },
   "source_files": "CZActionSheet/Classes/**/*",
   "frameworks": "UIKit",
+  "requires_arc": true,
   "dependencies": {
     "Masonry": [
 

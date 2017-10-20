@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, CZActionStyle);
+
 @class CZActionSheetItem,CZActionSheetTableViewCell;
 
 @interface CZActionSheetTableViewCell : UITableViewCell
 @property (strong, nonatomic) CZActionSheetItem *actionItem;
+@property (assign, nonatomic) CZActionStyle style;
 - (void)playErrorAminate;
 @end

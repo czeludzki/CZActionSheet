@@ -8,6 +8,7 @@
 
 #import "CZActionSheetTableViewCell.h"
 #import "CZActionSheetItem.h"
+#import "CZActionSheet.h"
 
 #import "Masonry.h"
 #import "UIColor+CZActionSheetExtension.h"
@@ -30,9 +31,25 @@
 - (void)setActionItem:(CZActionSheetItem *)actionItem
 {
     _actionItem = actionItem;
-    self.contentBtn.tintColor = _actionItem.tintColor;
+    UIColor *styleTintColor = self.style == CZActionStyle_Light ? [UIColor darkGrayColor] : [UIColor whiteColor];
+    self.contentBtn.tintColor = _actionItem.tintColor ? : styleTintColor;
     [self.contentBtn setTitle:_actionItem.title forState:UIControlStateNormal];
     [self.contentBtn setImage:_actionItem.image forState:UIControlStateNormal];
+}
+
+- (void)setStyle:(CZActionStyle)style
+{
+    _style = style;
+    switch (style) {
+        case CZActionStyle_Light:
+            self.contentBtn.backgroundColor = RMColorRGBA(255, 255, 255, .7f);
+            break;
+        case CZActionStyle_Dark:
+            self.contentBtn.backgroundColor = RMColorRGBA(1, 1, 1, .2f);
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - LifeCycle
