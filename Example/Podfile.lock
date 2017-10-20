@@ -1,0 +1,16 @@
+PODS:
+  - CZActionSheet (0.1.0)
+
+DEPENDENCIES:
+  - CZActionSheet (from `../`)
+
+EXTERNAL SOURCES:
+  CZActionSheet:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CZActionSheet: 4757c737551e73d19d7e5f00e976aafd5eb392a6
+
+PODFILE CHECKSUM: 616f9fe34d53ca027380d17f0de7abb15d18d1f4
+
+COCOAPODS: 1.4.0.beta.1
