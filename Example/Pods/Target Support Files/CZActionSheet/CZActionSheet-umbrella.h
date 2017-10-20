@@ -13,6 +13,8 @@
 #import "CZActionSheet.h"
 #import "CZActionSheetItem.h"
 #import "CZActionSheetTableViewCell.h"
+#import "CZActionSheet_Macro.h"
+#import "UIColor+CZActionSheetExtension.h"
 
 FOUNDATION_EXPORT double CZActionSheetVersionNumber;
 FOUNDATION_EXPORT const unsigned char CZActionSheetVersionString[];

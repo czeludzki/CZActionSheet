@@ -8,7 +8,10 @@
 
 #import "CZActionSheetTableViewCell.h"
 #import "CZActionSheetItem.h"
+
 #import "Masonry.h"
+#import "UIColor+CZActionSheetExtension.h"
+#import "CZActionSheet_Macro.h"
 
 @interface CZActionSheetTableViewCell ()
 @property (weak, nonatomic) UIButton *contentBtn;
@@ -50,7 +53,7 @@
     
     UIButton *contentBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     contentBtn.userInteractionEnabled = NO;
-    contentBtn.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:.7f];
+    contentBtn.backgroundColor = RMColorRGBA(255, 255, 255, .7f);
     contentBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 4, 0, -4);
     contentBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -4, 0, 4);
     contentBtn.titleLabel.font = [UIFont systemFontOfSize:17];
@@ -67,17 +70,21 @@
 
 - (void)playErrorAminate
 {
-    CASpringAnimation *animate = [CASpringAnimation animationWithKeyPath:@"transform.translation.x"];
-    animate.fromValue = @(-3.0f);
-    animate.toValue = @(3.0f);
-    animate.duration = .1f;
-    animate.repeatCount = 2.0f;
-    animate.autoreverses = YES;
-    animate.mass = 2;       // 质量，影响图层运动时的弹簧惯性，质量越大，弹簧拉伸和压缩的幅度越大
-    animate.damping = 9;        // 阻尼系数，阻止弹簧伸缩的系数，阻尼系数越大，停止越快
-    animate.stiffness = 1000;       // 刚度系数(劲度系数/弹性系数)，刚度系数越大，形变产生的力就越大，运动越快
-    animate.initialVelocity = 15;   // 初始速率，动画视图的初始速度大小 速率为正数时，速度方向与运动方向一致，速率为负数时，速度方向与运动方向相反
-    [self.layer addAnimation:animate forKey:nil];
+    if (@available(iOS 9.0, *)) {
+        CASpringAnimation *animate = [CASpringAnimation animationWithKeyPath:@"transform.translation.x"];
+        animate.fromValue = @(-3.0f);
+        animate.toValue = @(3.0f);
+        animate.duration = .1f;
+        animate.repeatCount = 2.0f;
+        animate.autoreverses = YES;
+        animate.mass = 2;       // 质量，影响图层运动时的弹簧惯性，质量越大，弹簧拉伸和压缩的幅度越大
+        animate.damping = 9;        // 阻尼系数，阻止弹簧伸缩的系数，阻尼系数越大，停止越快
+        animate.stiffness = 1000;       // 刚度系数(劲度系数/弹性系数)，刚度系数越大，形变产生的力就越大，运动越快
+        animate.initialVelocity = 15;   // 初始速率，动画视图的初始速度大小 速率为正数时，速度方向与运动方向一致，速率为负数时，速度方向与运动方向相反
+        [self.layer addAnimation:animate forKey:nil];
+    } else {
+        
+    }
 }
 
 @end
