@@ -1,0 +1,6 @@
+use_frameworks!
+target 'CZActionSheet_Tests' do
+  pod 'CZActionSheet', :path => '../'
+  
+  
+end
