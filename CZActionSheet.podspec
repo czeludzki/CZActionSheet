@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CZActionSheet'
-  s.version          = '0.1.1'
+  s.version          = '0.2.0'
   s.summary          = 'A ActionSheet.'
   s.description      = "Just an actionSheet"
 
