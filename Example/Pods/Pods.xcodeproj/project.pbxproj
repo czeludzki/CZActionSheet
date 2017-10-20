@@ -11,7 +11,7 @@
 		0CEBEA924A7F9F23AFC73580B6A4E800 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = A02D339E60E114FCC992372E93245BA1 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D2A0ED3F15B4A921E9736369F28BBE0 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF35C23E029BF10AE1D3595169AFBCF /* Masonry.framework */; };
 		14DB420BA4C1052CCFEDF58565D9ADA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC31C30AA1B843123575E6EBA38993C /* UIKit.framework */; };
-		1D0147C89B719328F787F31356AC4B6A /* UIColor+CZActionSheetExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 33254AAF9693224C336CBB00ADB879C0 /* UIColor+CZActionSheetExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0147C89B719328F787F31356AC4B6A /* UIColor+CZActionSheetExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 33254AAF9693224C336CBB00ADB879C0 /* UIColor+CZActionSheetExtension.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1E59577A0C655543F198FE8B4DFDECF9 /* CZActionSheetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C021F5EF91C7BA4BBDFBDC7F0E215BA2 /* CZActionSheetTableViewCell.m */; };
 		2432848AE8F5E0AD767551D857CEBC63 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */; };
 		2FC21C0E43E3CEF42B6849CE9996246A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A22C69638D55424736A7E57530671 /* Foundation.framework */; };
@@ -36,7 +36,7 @@
 		996896B1CD5E3AD849DFACBFEB9A7BED /* CZActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002E2FE10EC835D0DE8BE6C98472C21 /* CZActionSheet.m */; };
 		9F3BE3F5ADD0500D186227E3797DE18A /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DCAB46CA2931B8140F2639F17404AF /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7D4A729428F682879204F12824C4845 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C550CDA10D592ABB6A0383A3509F05 /* NSArray+MASAdditions.m */; };
-		A834272C4D76F7C1C1FBBC30B78FB4E5 /* CZActionSheet_Macro.h in Headers */ = {isa = PBXBuildFile; fileRef = 47BB1631D5BDBA2930E721775BB95596 /* CZActionSheet_Macro.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A834272C4D76F7C1C1FBBC30B78FB4E5 /* CZActionSheet_Macro.h in Headers */ = {isa = PBXBuildFile; fileRef = 47BB1631D5BDBA2930E721775BB95596 /* CZActionSheet_Macro.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A843DCF9C26F79A26A7B89B0E8237EDD /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C484EF8499F67EC81CA7E27930A63CDC /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A94615903A820DB23E6141E09317B3CF /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFDB27E59B036734BC0967EEADA01DD8 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
