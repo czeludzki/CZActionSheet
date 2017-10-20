@@ -10,20 +10,19 @@ Pod::Spec.new do |s|
   s.name             = 'CZActionSheet'
   s.version          = '0.1.0'
   s.summary          = 'A ActionSheet.'
-
-  s.description      = "just an actionSheet"
+  s.description      = "Just an actionSheet"
 
   s.homepage         = 'https://github.com/czeludzki/CZActionSheet'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'czeludzki' => 'czeludzki@gmail.com' }
-  s.source           = { :git => 'https://github.com/czeludzki/CZActionSheet.git', :tag => s.version.to_s }
-
-  s.platform = :ios
+  s.platform         = :ios
   s.ios.deployment_target = '8.0'
 
+  s.source           = { :git => 'https://github.com/czeludzki/CZActionSheet.git', :tag => s.version.to_s }
   s.source_files = 'CZActionSheet/Classes/**/*'
-  s.requires_arc = true
 
   s.frameworks = 'UIKit'
+  s.requires_arc = true
   s.dependency 'Masonry'
+
 end
