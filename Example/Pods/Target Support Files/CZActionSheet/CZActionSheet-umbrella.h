@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "CZActionSheet.h"
+#import "CZActionSheetItem.h"
+#import "CZActionSheetTableViewCell.h"
 
 FOUNDATION_EXPORT double CZActionSheetVersionNumber;
 FOUNDATION_EXPORT const unsigned char CZActionSheetVersionString[];
