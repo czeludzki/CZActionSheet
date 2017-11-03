@@ -34,6 +34,10 @@ typedef NS_ENUM(NSUInteger, CZActionStyle) {
 @property (nonatomic ,weak) id<CZActionSheetDeleagte> delegate;
 @property (nonatomic, copy) NSString *title;
 @property (copy, nonatomic) NSString *detail;
+/**
+ default is .5f
+ */
+@property (assign, nonatomic) CGFloat backgroundAlpha;
 @property (assign, nonatomic) CZActionStyle style;
 /**
  *  显示CZActionSheet

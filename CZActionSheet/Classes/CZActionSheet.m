@@ -18,7 +18,7 @@
 @interface CZActionSheet () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) UIVisualEffectView *effectView;
-@property (weak, nonatomic) UIView *titleAndDetailContent;
+@property (weak, nonatomic) UIVisualEffectView *titleAndDetailContent;
 @property (weak, nonatomic) UILabel *titleLabel;
 @property (weak, nonatomic) UILabel *detailLabel;
 @property (weak, nonatomic) UITableView *tableView;
@@ -60,6 +60,7 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
 - (instancetype)initWithActionItems:(NSArray<CZActionSheetItem *> *)items cancelButtonTitle:(NSString *)cancelBtnTitle{
     if (self = [super init]) {
         _style = CZActionStyle_Light;
+        _backgroundAlpha = .5f;
         self.items = [NSMutableArray arrayWithArray:items];
         if (cancelBtnTitle.length) {
             CZActionSheetItem *cancelItem = [CZActionSheetItem itemWithTitle:cancelBtnTitle image:nil andAction:nil];
@@ -98,22 +99,21 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
         make.height.mas_equalTo(200);
     }];
     
-    UIView *titleNDetailContent = [[UIView alloc] init];
+    UIVisualEffectView *titleNDetailContent = [[UIVisualEffectView alloc] initWithEffect:nil];
     titleNDetailContent.alpha = 0;
-    titleNDetailContent.backgroundColor = [UIColor clearColor];
     [self addSubview:titleNDetailContent];
     self.titleAndDetailContent = titleNDetailContent;
     [titleNDetailContent mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(tableView.mas_top).mas_offset(-4);
+        make.bottom.mas_equalTo(tableView.mas_top).mas_offset(0);
     }];
     
     UILabel *titleLabel = [[UILabel alloc] init];
-    [titleNDetailContent addSubview:titleLabel];
+    [titleNDetailContent.contentView addSubview:titleLabel];
     self.titleLabel = titleLabel;
-    titleLabel.textColor = [UIColor darkGrayColor];
+    titleLabel.textColor = [UIColor whiteColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    titleLabel.font = [UIFont boldSystemFontOfSize:16];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(4);
         make.right.mas_equalTo(-16);
@@ -121,16 +121,16 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
     }];
     
     UILabel *detailLabel = [[UILabel alloc] init];
-    [titleNDetailContent addSubview:detailLabel];
+    [titleNDetailContent.contentView addSubview:detailLabel];
     self.detailLabel = detailLabel;
     detailLabel.numberOfLines = 2;
     detailLabel.textColor = [UIColor darkGrayColor];
-    detailLabel.font = [UIFont systemFontOfSize:11];
+    detailLabel.font = [UIFont systemFontOfSize:12];
     [detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(titleLabel.mas_bottom).mas_offset(0);
         make.left.mas_equalTo(16);
         make.right.mas_equalTo(-16);
-        make.bottom.mas_equalTo(0);
+        make.bottom.mas_equalTo(-4);
     }];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
@@ -242,11 +242,13 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
     }];
     
     self.tableView.transform = CGAffineTransformMakeTranslation(0, height);
+    self.titleAndDetailContent.transform = CGAffineTransformMakeTranslation(0, height);
     
     __weak __typeof (self) weakSelf = self;
     [UIView animateWithDuration:.3f delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        weakSelf.backgroundColor = RMColorRGBA(1, 1, 1, .2f);
+        weakSelf.backgroundColor = RMColorRGBA(1, 1, 1, weakSelf.backgroundAlpha);
         weakSelf.tableView.transform = CGAffineTransformIdentity;
+        weakSelf.titleAndDetailContent.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:.3f animations:^{
             weakSelf.titleAndDetailContent.alpha = 1;

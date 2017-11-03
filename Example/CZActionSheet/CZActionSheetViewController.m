@@ -83,6 +83,7 @@
     item11.tintColor = [UIColor redColor];
     
     CZActionSheet *sheet = [CZActionSheet actionSheetWithActionItems:@[item0,item1,item2,item3,item4,item5,item6,item7,item8,item9,item10,item11] cancelButtonTitle:@"cancel"];
+    sheet.title = @"哈哈哈哈哈哈";
 //    sheet.style = CZActionStyle_Dark;
     [sheet showInView:nil];
 }
