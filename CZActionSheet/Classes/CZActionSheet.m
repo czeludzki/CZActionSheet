@@ -173,13 +173,13 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
 {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    header.backgroundView = [[UIImageView alloc] initWithImage:[[UIColor clearColor] createImage]];
+    header.backgroundView = [[UIImageView alloc] initWithImage:[[UIColor clearColor] CAS_createImage]];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section
 {
     UITableViewHeaderFooterView *footer = (UITableViewHeaderFooterView *)view;
-    footer.backgroundView = [[UIImageView alloc] initWithImage:[[UIColor clearColor] createImage]];
+    footer.backgroundView = [[UIImageView alloc] initWithImage:[[UIColor clearColor] CAS_createImage]];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

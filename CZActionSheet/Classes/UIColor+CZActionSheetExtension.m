@@ -9,7 +9,7 @@
 
 @implementation UIColor (CZActionSheetExtension)
 
-- (UIImage*)createImage
+- (UIImage*)CAS_createImage
 {
     CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);

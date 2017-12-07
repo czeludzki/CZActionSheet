@@ -8,5 +8,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (CZActionSheetExtension)
-- (UIImage *)createImage;
+- (UIImage *)CAS_createImage;
 @end
