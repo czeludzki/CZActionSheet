@@ -34,6 +34,8 @@ typedef NS_ENUM(NSUInteger, CZActionStyle) {
 @property (nonatomic ,weak) id<CZActionSheetDeleagte> delegate;
 @property (nonatomic, copy) NSString *title;
 @property (copy, nonatomic) NSString *detail;
+@property (nonatomic) UIFont *titleFont;
+@property (nonatomic) UIFont *detailFont;
 /**
  default is .5f
  */

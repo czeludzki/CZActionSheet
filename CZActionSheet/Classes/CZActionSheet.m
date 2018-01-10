@@ -28,6 +28,7 @@
 
 @implementation CZActionSheet
 static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
+@synthesize titleFont = _titleFont;
 
 #pragma mark - Getter && Setter
 - (void)setTitle:(NSString *)title
@@ -48,6 +49,26 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:(UIBlurEffectStyle)_style];
     self.effectView.effect = effect;
     [self.tableView reloadData];
+}
+
+- (UIFont *)titleFont
+{
+    return self.titleLabel.font;
+}
+
+- (UIFont *)detailFont
+{
+    return self.detailLabel.font;
+}
+
+- (void)setTitleFont:(UIFont *)titleFont
+{
+    self.titleLabel.font = titleFont;
+}
+
+- (void)setDetailFont:(UIFont *)detailFont
+{
+    self.detailLabel.font = detailFont;
 }
 
 #pragma mark - LifeCycle
