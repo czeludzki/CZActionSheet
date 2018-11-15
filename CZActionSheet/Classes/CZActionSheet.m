@@ -94,6 +94,7 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
 
 - (void)layoutView
 {
+
     self.backgroundColor = [UIColor clearColor];
     
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:(UIBlurEffectStyle)self.style];
@@ -104,6 +105,9 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
     tableView.backgroundColor = [UIColor clearColor];
     tableView.backgroundView = effectView;
     tableView.showsVerticalScrollIndicator = NO;
+    if (@available(iOS 11.0, *)) {
+        tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
+    }
     [self addSubview:tableView];
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -111,7 +115,6 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
     tableView.estimatedSectionFooterHeight = 0;
     tableView.estimatedSectionHeaderHeight = 0;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.contentInset = UIEdgeInsetsMake(0, 0, kTableViewBottomInsets, 0);
     [tableView registerClass:[CZActionSheetTableViewCell class] forCellReuseIdentifier:CZActionSheetTableViewCellID];
     self.tableView = tableView;
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -254,9 +257,12 @@ static NSString *CZActionSheetTableViewCellID = @"CZActionSheetTableViewCellID";
     }];
     [self layoutIfNeeded];
     
-    CGFloat height = self.tableView.contentSize.height + kTableViewBottomInsets;
+    CGFloat height = self.tableView.contentSize.height;
+    if (@available(iOS 11.0, *)) {
+        height += [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom;
+    }
     if (self.tableView.contentSize.height > UIWindowHeight*.5f) {
-        height = UIWindowHeight * .5f - 30; //30是毫无意义的
+        height = UIWindowHeight * .5f - 30;
     }
     [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(height);

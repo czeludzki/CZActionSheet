@@ -251,7 +251,7 @@
 				ORGANIZATIONNAME = czeludzki;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = 5827TLHCK5;
+						DevelopmentTeam = 5YG2N89PSR;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -538,12 +538,12 @@
 			baseConfigurationReference = 57AEA8100C2BE96D7A89BAFB /* Pods-CZActionSheet_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5827TLHCK5;
+				DEVELOPMENT_TEAM = 5YG2N89PSR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CZActionSheet/CZActionSheet-Prefix.pch";
 				INFOPLIST_FILE = "CZActionSheet/CZActionSheet-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "CZActionSheet-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -554,12 +554,12 @@
 			baseConfigurationReference = 18CD320CAE5947C3D982247E /* Pods-CZActionSheet_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5827TLHCK5;
+				DEVELOPMENT_TEAM = 5YG2N89PSR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CZActionSheet/CZActionSheet-Prefix.pch";
 				INFOPLIST_FILE = "CZActionSheet/CZActionSheet-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "CZActionSheet-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
